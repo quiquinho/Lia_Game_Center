@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rosalia Game Center</string>
+    <string name="title_activity_main">Rosalia Game Center</string>
+    <string name="package_name">com.rosalia.gamecenter</string>
+    <string name="custom_url_scheme">com.rosalia.gamecenter</string>
+</resources>

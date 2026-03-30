@@ -5,9 +5,10 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background: linear-gradient(to bottom, #DC7CD8, #6866B5);
   margin: 0;
@@ -33,5 +34,160 @@
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+.pictograms-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2rem;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pictogram-box {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease;
+}
+
+.pictogram-box:hover {
+  transform: scale(1.05);
+}
+
+.pictogram-img {
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+  border: 2px solid white;
+  border-radius: 15px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .pictogram-box {
+    width: 120px;
+    height: 120px;
+  }
+  .title {
+    font-size: 3rem;
+  }
+}
+
+/* Juego Memory (Couples) */
+.game-view {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.game-header {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.back-btn, .reset-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  width: 95vw;
+  height: 80vh;
+  max-width: 1200px;
+}
+
+.memory-card {
+  perspective: 1000px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.memory-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.card-front {
+
+
+  background: linear-gradient(135deg, #248A8E, #13AEB4);
+  color: white;
+}
+
+.card-logo {
+
+  font-size: 2rem;
+  font-weight: bold;
+
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+.card-img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .memory-grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    height: 85vh;
   }
 }
