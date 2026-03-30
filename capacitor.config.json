@@ -1,0 +1,8 @@
+{
+  "appId": "com.rosalia.gamecenter",
+  "appName": "Rosalia Game Center",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}

@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'RosaliaFont';
+  src: url('./assets/mgf_pinlock/MGF-PinlockPersonalUse.otf') format('opentype');
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #DC7CD8, #6866B5);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+  color: white;
+}
+
+.title {
+  font-family: 'RosaliaFont', 'Comic Sans MS', fantasy;
+  font-size: 4rem;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
